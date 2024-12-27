@@ -1,0 +1,12 @@
+services:
+  - name: watawatawata-service
+    type: web
+    env: node
+    plan: free
+    buildCommand: npm install  # 必要に応じて変更
+    startCommand: node server.js  # アプリケーションのエントリーポイント
+    branch: main  # デプロイ対象のブランチ
+    healthCheckPath: /  # 必要なら変更（例: /health）
+    envVars:
+      - key: NODE_ENV
+        value: production
